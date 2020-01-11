@@ -1,7 +1,7 @@
 def translate(sentence)
   words = sentence.split
   words.map! do |word|
-    prefix, vowel, suffix = word.partition(/[aeioAEIOU]|(?<![qQ])[uU]/)
+    prefix, vowel, suffix = word.partition(/[aeioAEIO]|(?<![qQ])[uU]/)
     suffix, punctuation, _ = suffix.partition(/[!?,.;]/)
     if prefix == ""
       vowel + suffix + "ay" + punctuation
